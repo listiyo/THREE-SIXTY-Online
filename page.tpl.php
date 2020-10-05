@@ -1,0 +1,326 @@
+<!-- #header -->
+<div id="header">
+	<!-- #header-inside -->
+    <div id="header-inside" class="container_12 clearfix">
+    	<!-- #header-inside-left -->
+        <div id="header-inside-left" class="grid_8">
+            
+            <?php if ($logo): ?>
+            <a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
+            <?php endif; ?>
+     
+            <?php if ($site_name || $site_slogan): ?>
+            <div class="clearfix">
+            <?php if ($site_name): ?>
+            <span id="site-name"><a href="<?php print check_url($front_page); ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a></span>
+            <?php endif; ?>
+            <?php if ($site_slogan): ?>
+            <span id="slogan"><?php print $site_slogan; ?></span>
+            <?php endif; ?>
+            </div>
+            <?php endif; ?>
+            
+        </div><!-- EOF: #header-inside-left -->
+        
+        <!-- #header-inside-right -->    
+        <div id="header-inside-right" class="grid_4">
+
+			<?php print render($page['search_area']); ?>
+
+        </div><!-- EOF: #header-inside-right -->
+    
+    </div><!-- EOF: #header-inside -->
+
+</div><!-- EOF: #header -->
+
+<!-- #header-menu -->
+<div id="header-menu">
+	<!-- #header-menu-inside -->
+    <div id="header-menu-inside" class="container_12 clearfix">
+    
+    	<div class="grid_12">
+            <div id="navigation" class="clearfix">
+            <?php if ($page['navigation']) :?>
+            <?php print drupal_render($page['navigation']); ?>
+            <?php else :
+            if (module_exists('i18n_menu')) {
+            $main_menu_tree = i18n_menu_translated_tree(variable_get('menu_main_links_source', 'main-menu'));
+            } else {
+            $main_menu_tree = menu_tree(variable_get('menu_main_links_source', 'main-menu')); 
+            }
+            print drupal_render($main_menu_tree);
+            endif; ?>
+            </div>
+        </div>
+        
+    </div><!-- EOF: #header-menu-inside -->
+
+</div><!-- EOF: #header-menu -->
+
+<!-- #banner -->
+<div id="banner">
+
+	<?php print render($page['banner']); ?>
+	
+    <?php if (theme_get_setting('slideshow_display','corporateclean')): ?>
+    
+    <?php if ($is_front): ?>
+    
+    <!-- #slideshow -->
+    <div id="slideshow">
+    
+        <!--slider-item-->
+        <div class="slider-item">
+            <!--<div class="content container_12"">-->
+            	<!--<div class="grid_12"">-->
+                
+                <!--slider-item content 1-->
+                <div style="float:left; padding:0; position: relative;">
+                <img src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/Strategy.jpg"/>
+                </div>
+                
+                <div class="content container_12"">
+                <div class="grid_12"">
+                    <div style="font-size: 1.4em; color: white; position: absolute; top: 1.8em; left: 1.4em;">
+                    Strategy & Data Modelling
+                    </div>
+                    <div style="color: white; position: absolute; top: 5em; left: 2em;">
+                    Guiding informed decisions about technologies, approach and priorities to deliver world class customer experiences.
+                    </div>
+                </div>
+                </div>
+                    <div style="display:block; text-align:center; padding-bottom: 10px;"><a class="more" href="/what-we-do#strategy">Tell me more</a></div>
+                    <!--EOF:slider-item content-->
+                
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <!--EOF:slider-item-->
+        
+        <!--slider-item-->
+        <div class="slider-item">
+                
+                <!--slider-item content-->
+                <div style="float:left; padding:0; position: relative;">
+                <img src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/Creative.jpg"/>
+                </div>
+
+                <div class="content container_12">
+            	<div class="grid_12">
+                    <div style="font-size: 1.4em; color: white; position: absolute; top: 1.8em; left: 1.4em;">
+                    Design
+                    </div>
+                    <div style="color: white; position: absolute; top: 5em; left: 2em;">
+                    Customer-centric design to create beautiful customer experiences.
+                </div>
+                </div>
+
+            </div>
+               <div style="display:block; text-align:center; padding-bottom: 10px;"><a class="more" href="/what-we-do#design">Get in touch</a></div>
+                <!--EOF:slider-item content-->
+                
+        </div>
+        <!--EOF:slider-item-->
+        
+        <!--slider-item-->
+        <div class="slider-item">
+                 
+                <!--slider-item content-->
+                <div style="float:left; padding:0; position: relative;">
+                <img src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/Development.jpg"/>
+                </div>
+                
+                <div class="content container_12">
+                <div class="grid_12">
+                    <div style="font-size: 1.4em; color: white; position: absolute; top: 1.8em; left: 1.4em;">
+                    Digital Business Transformation
+                    </div>
+                    <div style="color: white; position: absolute; top: 5em; left: 2em; right: 4em;">
+                    Helping you apply emerging technologies and processes to your business to improve operating efficiency.
+                    </div>
+                </div>
+                </div>
+               <div style="display:block; text-align:center; padding-bottom: 10px;"><a class="more" href="/what-we-do#digital">Let's talk</a></div>
+                <!--EOF:slider-item content-->
+        </div>
+        <!--EOF:slider-item-->
+        
+        <!--slider-item-->
+        <div class="slider-item">
+                
+                <!--slider-item content-->
+                <div style="float:left; padding:0; position: relative;">
+                <img src="<?php print base_path() . drupal_get_path('theme', 'corporateclean') ;?>/mockup/Software.jpg"/>
+                </div>
+                
+                <div class="content container_12">
+            	<div class="grid_12">
+                <div style="font-size: 1.4em; color: white; position: absolute; top: 1.8em; left: 1.4em;">
+                    Development & Engineering
+                    </div>
+                    <div style="color: white; position: absolute; top: 5em; left: 2em; right: 4em;">
+                    Solving business problems through digital processes, products, developmnet and software engineering.
+                    </div>
+                    </div>
+                </div>
+               <div style="display:block; text-align:center; padding-bottom: 10px;"><a class="more" href="/what-we-do#development">Take me there</a></div>
+                <!--EOF:slider-item content-->
+                
+        </div>
+        <!--EOF:slider-item-->
+    
+    </div>
+    <!-- EOF: #slideshow -->
+    
+    <!-- #slider-controls-wrapper -->
+    <div id="slider-controls-wrapper">
+        <div id="slider-controls">
+            <ul id="slider-navigation">
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- EOF: #slider-controls-wrapper -->
+    
+    <?php endif; ?>
+    
+	<?php endif; ?>  
+
+</div><!-- EOF: #banner -->
+
+
+<!-- #content -->
+<div id="content">
+	<!-- #content-inside -->
+    <div id="content-inside" class="container_12 clearfix">
+    
+        <?php if ($page['sidebar_first']) :?>
+        <!-- #sidebar-first -->
+        <div id="sidebar-first" class="grid_4">
+        	<?php print render($page['sidebar_first']); ?>
+        </div><!-- EOF: #sidebar-first -->
+        <?php endif; ?>
+        
+        <?php if ($page['sidebar_first'] && $page['sidebar_second']) { ?>
+        <div class="grid_4">
+        <?php } elseif ($page['sidebar_first'] || $page['sidebar_second']) { ?>
+        <div id="main" class="grid_8">
+		<?php } else { ?>
+        <div id="main" class="grid_12">    
+        <?php } ?>
+            
+            <?php if (theme_get_setting('breadcrumb_display','corporateclean')): print $breadcrumb; endif; ?>
+            
+            <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
+       
+            <?php if ($messages): ?>
+            <div id="console" class="clearfix">
+            <?php print $messages; ?>
+            </div>
+            <?php endif; ?>
+     
+            <?php if ($page['help']): ?>
+            <div id="help">
+            <?php print render($page['help']); ?>
+            </div>
+            <?php endif; ?>
+            
+            <?php if ($action_links): ?>
+            <ul class="action-links">
+            <?php print render($action_links); ?>
+            </ul>
+            <?php endif; ?>
+            
+			<?php print render($title_prefix); ?>
+            <?php if ($title): ?>
+            <h1><?php print $title ?></h1>
+            <?php endif; ?>
+            <?php print render($title_suffix); ?>
+            
+            <?php if ($tabs): ?><?php print render($tabs); ?><?php endif; ?>
+            
+            <?php print render($page['content']); ?>
+            
+            <?php print $feed_icons; ?>
+            
+        </div><!-- EOF: #main -->
+        
+        <?php if ($page['sidebar_second']) :?>
+        <!-- #sidebar-second -->
+        <div id="sidebar-second" class="grid_4">
+        	<?php print render($page['sidebar_second']); ?>
+        </div><!-- EOF: #sidebar-second -->
+        <?php endif; ?>  
+
+    </div><!-- EOF: #content-inside -->
+
+</div><!-- EOF: #content -->
+
+<!-- #footer partner-->
+<?php if ($page['footer_partner']) :?>    
+<div id="footer-partner">
+	<!-- #footer-inside-partner -->
+    <div id="footer-inside-partner" class="container_12 clearfix">
+        <?php print render($page['footer_partner']); ?>
+    </div><!-- EOF: #footer-inside-partner -->
+</div><!-- EOF: #footer partner -->
+<?php endif; ?>  
+
+<!-- #footer || $page['footer_third']) -->    
+<?php if ($page['footer_first'] || $page['footer_second']) : ?>    
+<div id="footer">
+	<!-- #footer-inside -->
+    <div id="footer-inside" class="container_12 clearfix">
+    
+            <div class="footer-area grid_6">
+            <?php print render($page['footer_first']); ?>
+            </div><!-- EOF: .footer-area -->
+        
+            <div class="footer-area grid_6">
+            <?php print render($page['footer_second']); ?>
+            </div><!-- EOF: .footer-area -->
+            
+           <!--   <div class="footer-area grid_4"> -->
+           <!--  ?php print render($page['footer_third']); ?  -->
+           <!--  </div> !-- EOF: .footer-area --> 
+
+    </div><!-- EOF: #footer-inside -->
+</div><!-- EOF: #footer -->
+<?php endif; ?>  
+
+<!-- #footer-bottom -->    
+<div id="footer-bottom">
+
+	<!-- #footer-bottom-inside --> 
+    <div id="footer-bottom-inside" class="container_12 clearfix">
+    	<!-- #footer-bottom-left --> 
+    	<div id="footer-bottom-left" class="grid_8">
+        
+            <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('class' => array('secondary-menu', 'links', 'clearfix')))); ?>
+            
+            <?php print render($page['footer']); ?>
+            
+        </div>
+    	<!-- #footer-bottom-right --> 
+        <div id="footer-bottom-right" class="grid_4">
+        
+        	<?php print render($page['footer_bottom_right']); ?>
+        
+        </div><!-- EOF: #footer-bottom-right -->
+       
+    </div><!-- EOF: #footer-bottom-inside -->
+    
+    <?php if (theme_get_setting('credits_display','corporateclean')): ?>
+    <!-- #credits -->   
+    <div id="credits" class="container_12 clearfix">
+        <div class="grid_12">
+        <p>Ported to Drupal by <a href="http://www.drupalizing.com">Drupalizing</a>, a Project of <a href="http://www.morethanthemes.com">More than (just) Themes</a>. Designed by <a href="http://www.kaolti.com/">Zsolt Kacso</a></p>
+        </div>
+    </div>
+    <!-- EOF: #credits -->
+    <?php endif; ?>
+
+</div><!-- EOF: #footer -->
